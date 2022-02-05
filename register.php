@@ -1,6 +1,14 @@
 <?php
+    require_once("includes/classes/FormSanitizer.php");
     if(isset($__POST["submitButton"])){
-         echo "Форма тапшырылды";
+        //  echo "Форма тапшырылды";
+         $firtName = FormSanitizer::sanitizeFormString($_POST["firstName"]);
+         $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
+         $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
+         $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
+         $email2 = FormSanitizer::sanitizeFormEmail($_POST["email2"]);
+         $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
+         $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
     }
 ?>
 
@@ -10,7 +18,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to BakaiMedia</title>
+    <title>Welcome to BAKAIMEDIA</title>
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -19,7 +27,7 @@
         <div class="signInContainer__column__header">
             <img src="assets/img/logo.png" title="logo" src="Site logo">
             <h3>Sign Up</h3>
-            <span>to continue to BakaiMEDIA</span>
+            <span>to continue to BAKAIMEDIA</span>
         </div>
         <form method="POST">
             <input type="text" name="firstName" placeholder="Firs name" required>
