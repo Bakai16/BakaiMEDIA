@@ -1,6 +1,6 @@
 <?php
     if(isset($__POST["submitButton"])){
-         echo "Форма тапшырылды";
+        //  echo "Форма тапшырылды";
     }
 ?>
 

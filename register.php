@@ -1,5 +1,7 @@
 <?php
+    require_once("includes/config.php");   
     require_once("includes/classes/FormSanitizer.php");
+
     if(isset($__POST["submitButton"])){
         //  echo "Форма тапшырылды";
          $firtName = FormSanitizer::sanitizeFormString($_POST["firstName"]);
